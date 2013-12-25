@@ -30,6 +30,7 @@ Affiche `www.example.com` et `/`.
 * `url.query` _(String)_ Paramètres (?arg=value). Dans l'exemple: `undefined`
 * `url.hash` _(String)_ Ancre (#ancre). Dans l'exemple: `undefined`
 
+* `url.getPath()` _(Array)_ Renvois le chemin parsé. Dans l'exemple: `[]`
 * `url.getQuery()` _(Object)_ Renvois les paramètres parsés. Dans l'exemple: `{}`
 * `url.getHost()` _(String)_ Renvois l'hote (sous-domaine + domaine). Dans l'exemple: `"www.example.com"`
 * `url.getPort()` _(int)_ Renvois le port même si il n'est pas précisé ou -1 si inconnu. Dans l'exemple: `80`

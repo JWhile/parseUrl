@@ -40,15 +40,15 @@ Url.prototype.parse = function()
 
     if(match !== null) // Exemple: 'https://admin:123456@secure.example.com:8181/local/test?search=bk&show=page#content'
     {
-        this.protocol  = match[1]; // 'https'
-        this.user      = match[2]; // 'admin'
-        this.password  = match[3]; // '123456'
-        this.subdomain = match[4]; // 'secure'
-        this.domain    = match[5]; // 'example.com'
-        this.port      = match[6]; // '8181'
-        this.path      = match[7]; // '/local/test'
-        this.query     = match[8]; // 'search=bk&show=page'
-        this.hash      = match[9]; // '#content'
+        this.protocol  = match[1] || ''; // 'https'
+        this.user      = match[2] || ''; // 'admin'
+        this.password  = match[3] || ''; // '123456'
+        this.subdomain = match[4] || ''; // 'secure'
+        this.domain    = match[5] || ''; // 'example.com'
+        this.port      = match[6] || ''; // '8181'
+        this.path      = match[7] || ''; // '/local/test'
+        this.query     = match[8] || ''; // 'search=bk&show=page'
+        this.hash      = match[9] || ''; // '#content'
 
         this.parsed = true;
     }

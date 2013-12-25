@@ -19,16 +19,16 @@ Affiche `www.example.com` et `/`.
 * `url.parsed` _(boolean)_ Si l'URL est parsée (Si l'URL n'est pas valide, elle ne sera pas parsée et `url.parsed` sera `false`). Si `url.parsed` est `false`, tout ce qui suit vaudra `null`. Dans l'exemple: `true`
 
 * `url.protocol` _(String)_ Protocole (http, https, ftp...). Dans l'exemple: `"http"`
-* `url.user` _(String)_ Utilisateur (très peu utilisé). Dans l'exemple: `undefined`
-* `url.password` _(String)_ Mot de passe (très peu utilisé). Dans l'exemple: `undefined`
+* `url.user` _(String)_ Utilisateur (très peu utilisé). Dans l'exemple: `""`
+* `url.password` _(String)_ Mot de passe (très peu utilisé). Dans l'exemple: `""`
 
 * `url.subdomain` _(String)_ Sous-domaine. Dans l'exemple: `"www"`
 * `url.domain` _(String)_ Domaine. Dans l'exemple: `"example.com"`
-* `url.port` _(String)_ Port. Uniquement si il est précisé dans l'URL, utilisez `url.getPort()`. Dans l'exemple: `undefined`
+* `url.port` _(String)_ Port. Uniquement si il est précisé dans l'URL, utilisez `url.getPort()`. Dans l'exemple: `""`
 
 * `url.path` _(String)_ Chemin. (/path). Dans l'exemple: `"/"`
-* `url.query` _(String)_ Paramètres (?arg=value). Dans l'exemple: `undefined`
-* `url.hash` _(String)_ Ancre (#ancre). Dans l'exemple: `undefined`
+* `url.query` _(String)_ Paramètres (?arg=value). Dans l'exemple: `""`
+* `url.hash` _(String)_ Ancre (#ancre). Dans l'exemple: `""`
 
 * `url.getPath()` _(Array)_ Renvois le chemin parsé. Dans l'exemple: `[]`
 * `url.getQuery()` _(Object)_ Renvois les paramètres parsés. Dans l'exemple: `{}`

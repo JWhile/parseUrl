@@ -16,7 +16,7 @@ Affiche `www.example.com` et `/`.
 ### Références
 
 * `url.url` _(String)_ L'URL. Dans l'exemple: `"http://www.example.com/"`
-* `url.parsed` _(boolean)_ Si l'URL est parsée (Si l'URL n'est pas valide, elle ne sera pas parsée et `url.parsed` sera `false`). Si `url.parsed` est `false`, tout ce qui suit vraudra `null`. Dans l'exemple: `true`
+* `url.parsed` _(boolean)_ Si l'URL est parsée (Si l'URL n'est pas valide, elle ne sera pas parsée et `url.parsed` sera `false`). Si `url.parsed` est `false`, tout ce qui suit vaudra `null`. Dans l'exemple: `true`
 
 * `url.protocol` _(String)_ Protocole (http, https, ftp...). Dans l'exemple: `"http"`
 * `url.user` _(String)_ Utilisateur (très peu utilisé). Dans l'exemple: `undefined`
@@ -30,5 +30,6 @@ Affiche `www.example.com` et `/`.
 * `url.query` _(String)_ Paramètres (?arg=value). Dans l'exemple: `undefined`
 * `url.hash` _(String)_ Ancre (#ancre). Dans l'exemple: `undefined`
 
+* `url.getQuery()` _(Object)_ Renvois les paramètres parsés. Dans l'exemple: `{}`
 * `url.getHost()` _(String)_ Renvois l'hote (sous-domaine + domaine). Dans l'exemple: `"www.example.com"`
 * `url.getPort()` _(int)_ Renvois le port même si il n'est pas précisé ou -1 si inconnu. Dans l'exemple: `80`

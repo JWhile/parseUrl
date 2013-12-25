@@ -4,6 +4,8 @@ var Url;
 
 var urlRegExp = new RegExp('^([^:]+)://(?:([^:@]+)(?::([^@]+))?@)?(?:(.+)\\.)?([a-zA-Z0-9_\\-]+\\.[a-z]{2,4}|localhost|(?:[0-9]{1,3}){4})(?:\\:([0-9]+))?([^#\\?]+)?(?:\\?([^#]+))?(#.+)?$'); // :RegExp
 
+var queryRegExp = new RegExp('([^=&]+)=([^&]+)', 'g'); // :RegExp
+
 var ports = {'http': 80, 'https': 443, 'ftp': 21, 'telnet': 23}; // :Map<String, int>
 
 /**
@@ -25,6 +27,8 @@ Url = function(url)
     this.path      = null; // :String
     this.query     = null; // :String
     this.hash      = null; // :String
+
+    this._query    = null; // :Map<String, String>
 }
 // function parse():@Chainable
 Url.prototype.parse = function()
@@ -47,6 +51,23 @@ Url.prototype.parse = function()
     }
 
     return this;
+};
+// function getQuery():Map<String, String>
+Url.prototype.getQuery = function()
+{
+    if(this._query === null && this.parsed)
+    {
+        this._query = {};
+
+        this.query.replace(queryRegExp, function(match, c1, c2)
+        {
+            this._query[c1] = c2;
+
+            return match;
+        });
+    }
+
+    return this._query;
 };
 // function getHost():String
 Url.prototype.getHost = function()

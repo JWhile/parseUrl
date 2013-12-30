@@ -4,7 +4,7 @@ Décompose les éléments d'une URL (protocole, utilisateur, mot de passe, sous-
 
 Exemple d'URL: `http://www.example.com/`, `ftp://user:pass@127.0.0.1:21/`, `https://example.com:81/admin?login=1#content`
 
-### Example
+### Exemple
 
 ```js
 var url = new Url('http://www.example.com/').parse();
@@ -16,6 +16,8 @@ console.log(url.path);
 Affiche `"www.example.com"` et `"/"`.
 
 ### Références
+
+##### class Url
 
 ###### Propriétés
 
@@ -36,10 +38,10 @@ Affiche `"www.example.com"` et `"/"`.
 
 ###### Methodes
 
-* `url.getPath()` _(Array)_ Renvois le chemin parsé. _(Dans l'exemple: `[]`)_
+* `url.getPath()` _(Array)_ Retourne le chemin parsé. _(Dans l'exemple: `[]`)_
 
-* `url.getQuery()` _(Object)_ Renvois les paramètres parsés. _(Dans l'exemple: `{}`)_
+* `url.getQuery()` _(Object)_ Retourne les paramètres parsés. _(Dans l'exemple: `{}`)_
 
-* `url.getHost()` _(String)_ Renvois l'hôte (sous-domaine + domaine). _(Dans l'exemple: `"www.example.com"`)_
+* `url.getHost()` _(String)_ Retourne l'hôte (sous-domaine + domaine). _(Dans l'exemple: `"www.example.com"`)_
 
-* `url.getPort()` _(int)_ Renvois le port même si il n'est pas précisé ou -1 si inconnu. _(Dans l'exemple: `80`)_
+* `url.getPort()` _(int)_ Retourne le port même si il n'est pas précisé ou -1 si inconnu. _(Dans l'exemple: `80`)_

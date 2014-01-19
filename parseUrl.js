@@ -2,7 +2,7 @@ var Url;
 
 (function(){
 
-var urlRegExp = new RegExp('^([^:]+)://(?:([^:@]+)(?::([^@]+))?@)?(?:(.+)\\.)?([a-zA-Z0-9_\\-]+\\.[a-z]{2,4}|localhost|(?:[0-9]{1,3}){4})(?:\\:([0-9]+))?([^#\\?]+)?(?:\\?([^#]+))?(#.+)?$'); // :RegExp
+var urlRegExp = new RegExp('^([^:]+)://(?:([^:@]+)(?::([^@]+))?@)?(?:(.+)\\.)?([a-zA-Z0-9_\\-]+\\.[a-z]{2,4}|localhost|(?:[0-9]{1,3}\\.?){3})(?:\\:([0-9]+))?([^#\\?]+)?(?:\\?([^#]+))?(#.+)?$'); // :RegExp
 
 var pathRegExp = new RegExp('([^/]+)', 'g'); // :RegExp
 
@@ -87,7 +87,7 @@ Url.prototype.getQuery = function()
 // function getHost():String
 Url.prototype.getHost = function()
 {
-    return this.parsed? this.subdomain +'.'+ this.domain : null;
+    return this.parsed? ((this.subdomain.length > 0)? this.subdomain +'.' : '') + this.domain : null;
 };
 // function getPort():int
 Url.prototype.getPort = function()
